@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffe2ed">
+<title>یه قرار قشنگ؟ 💗</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+:root{--pink:#ff5f9e;--deep:#d92f78;--pale:#fff1f6;--ink:#74324e;--line:#ffd0e1}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;display:grid;place-items:center;padding:22px;overflow-x:hidden;font-family:'Vazirmatn',Tahoma,sans-serif;color:var(--ink);background:radial-gradient(circle at 15% 15%,#fff 0 3px,transparent 4px),radial-gradient(circle at 85% 25%,#ffc3da 0 5px,transparent 6px),linear-gradient(135deg,#ffeaf2,#ffd5e5 48%,#fff1f7);background-size:45px 45px,68px 68px,auto}
+body:before,body:after{content:"♡";position:fixed;color:#ff9fc3;opacity:.35;font-size:140px;pointer-events:none;animation:float 6s ease-in-out infinite}
+body:before{top:2%;left:5%}body:after{bottom:1%;right:5%;animation-delay:-3s}
+@keyframes float{50%{transform:translateY(-14px) rotate(8deg)}}
+.shell{width:min(100%,520px);position:relative}
+.card{position:relative;background:rgba(255,255,255,.88);border:2px solid white;border-radius:30px;padding:clamp(24px,6vw,42px);box-shadow:0 22px 65px #c84c7b25, inset 0 0 0 1px #ffd9e6;text-align:center;overflow:hidden}
+.card:before{content:"";position:absolute;inset:9px;border:1px dashed #ffb7d1;border-radius:23px;pointer-events:none}
+.content{position:relative;z-index:1}
+.stamp{width:76px;height:76px;margin:0 auto 16px;border-radius:25px;display:grid;place-items:center;background:linear-gradient(145deg,#ffb8d2,#ffe6ef);font-size:38px;box-shadow:0 8px 20px #ff80ae35;transform:rotate(-5deg)}
+.eyebrow{font-size:12px;letter-spacing:2px;color:#d77a9d;font-weight:800;margin:0 0 9px}
+h1{font-size:clamp(25px,6vw,34px);line-height:1.55;margin:0 0 10px;font-weight:900;color:#8e3158}
+.sub{font-size:14px;line-height:1.9;color:#ad6b87;margin:0 auto 24px;max-width:330px}
+.buttons{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;min-height:56px}
+button{font:inherit;font-weight:800;border:0;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;touch-action:manipulation}
+button:focus-visible,input:focus-visible{outline:3px solid #f58ab3;outline-offset:3px}
+.btn{padding:13px 25px;border-radius:16px;min-width:112px}
+.yes{color:white;background:linear-gradient(135deg,#ff76a9,#ed3f87);box-shadow:0 8px 18px #ed3f8740}
+.yes:hover{transform:translateY(-2px);box-shadow:0 12px 22px #ed3f874a}
+.no{color:#b25b7f;background:#fff0f6;border:1px solid #ffd0e1}
+.note{font-size:11px;color:#c38aa1;margin:17px 0 0}
+.progress{display:flex;gap:6px;justify-content:center;margin-bottom:22px}
+.dot{height:5px;width:27px;border-radius:9px;background:#f7dce7}.dot.active{background:#f25b98}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:20px 0 4px}
+.option{padding:16px 8px;border:1.5px solid #ffd1e1;background:#fff7fa;border-radius:17px;color:#8e3158}
+.option .emoji{display:block;font-size:26px;margin-bottom:7px}
+.option:hover{border-color:#ff7cac;transform:translateY(-2px)}
+.option.selected{background:#ffe0ec;border-color:#f04b8b;box-shadow:0 0 0 3px #ffcee0}
+.field-label{display:block;text-align:right;font-size:13px;font-weight:800;margin:15px 0 8px}
+input,select{font:inherit;color:#7b3452;background:#fff8fb;border:1.5px solid #ffd0e1;border-radius:14px;padding:13px;width:100%;min-width:0}
+.date-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.time-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.actions{display:flex;justify-content:center;gap:10px;margin-top:23px}
+.back{background:#fff0f6;color:#a34c70;border:1px solid #ffd0e1;padding:12px 18px;border-radius:14px}
+.next{background:linear-gradient(135deg,#ff76a9,#ed3f87);color:white;padding:12px 23px;border-radius:14px;box-shadow:0 7px 16px #ed3f8735}
+.error{min-height:22px;color:#d52f70;font-size:12px;margin:8px 0 0}
+.result h1{font-size:clamp(38px,10vw,54px);color:#ed3f87;margin:5px 0 7px}
+.result .party{font-size:18px;font-weight:800;line-height:1.9;margin:0 auto 12px}
+.summary{background:#fff2f7;border:1px solid #ffd3e2;border-radius:18px;padding:17px 13px;line-height:2;font-size:15px}
+.summary strong{color:#d92f78}
+.footer{font-size:11px;color:#c38aa1;margin-top:22px}
+.hidden{display:none!important}
+@media(max-width:380px){body{padding:12px}.card{padding:25px 19px}.options{gap:8px}.option{padding:13px 5px}.btn{min-width:100px;padding:12px 19px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="shell">
+<section class="card">
+<div class="content">
+<div class="stamp" id="stamp">💗</div>
+<div class="eyebrow" id="eyebrow">یک دعوت کوچولوی صورتی</div>
+<div class="progress" id="progress"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+<div id="app"></div>
+<div class="footer" id="footer">با کلی عشق، فقط برای تو ♡</div>
+</div>
+</section>
+</main>
+<script>
+const app=document.getElementById('app'), progress=document.getElementById('progress'), stamp=document.getElementById('stamp'), eyebrow=document.getElementById('eyebrow'), footer=document.getElementById('footer');
+let step=0, place='', day='', month='', hour='18', minute='00', noCount=0, yesScale=1;
+const places=[
+ {name:'کافه',emoji:'☕',desc:'یه نوشیدنی و کلی حرف'},
+ {name:'گیم‌نت',emoji:'🎮',desc:'بازی و رقابت دوستانه'},
+ {name:'شهربازی',emoji:'🎡',desc:'هیجان و خنده'},
+ {name:'قدم بزنیم',emoji:'🌷',desc:'یه پیاده‌روی دونفره'}
+];
+function setProgress(n){progress.classList.toggle('hidden',n===0||n===4);progress.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i<n));}
+function render(){
+ setProgress(step);
+ if(step===0){
+  stamp.textContent='💗';eyebrow.textContent='یک دعوت کوچولوی صورتی';
+  app.innerHTML=`<h1>آیا دوسم داری؟</h1><p class="sub">یه سوال خیلی مهم دارم ازت… با دقت جواب بده ها! 🥹💕</p><div class="buttons"><button class="btn yes" id="yes" style="transform:scale(${yesScale})">آره 💖</button><button class="btn no" id="no">خیر 🙈</button></div><p class="note" id="hint">یه جواب کوچولوی قشنگ می‌خوام ♡</p>`;
+  document.getElementById('yes').onclick=()=>{step=1;render()};
+  document.getElementById('no').onclick=()=>{noCount++;yesScale=Math.min(yesScale+.22,2.7);const y=document.getElementById('yes');y.style.transform=`scale(${yesScale})`;y.style.transformOrigin='center';document.getElementById('hint').textContent=['اِاِ! یه بار دیگه فکر کن 😚','مطمئنی؟ آره خیلی قشنگ‌تره! 🥺','دکمه‌ی آره داره بزرگ‌تر می‌شه‌ها 💗','فکر کنم جواب رو می‌دونی دیگه! 😌'][Math.min(noCount-1,3)];if(yesScale>=2.7){const no=document.getElementById('no');no.disabled=true;no.style.opacity='.35';no.style.cursor='not-allowed';document.getElementById('hint').textContent='خب دیگه، فقط یه جواب مونده! 💞'}};
+ }else if(step===1){
+  stamp.textContent='🗺️';eyebrow.textContent='مرحله اول از سه';
+  app.innerHTML=`<h1>کجا بریم؟</h1><p class="sub">قرارمون رو تو انتخاب کن؛ هرجا با تو قشنگه ✨</p><div class="options">${places.map(p=>`<button class="option ${place===p.name?'selected':''}" data-place="${p.name}"><span class="emoji">${p.emoji}</span><strong>${p.name}</strong><div style="font-size:11px;margin-top:5px;color:#bd7995">${p.desc}</div></button>`).join('')}</div><p class="error" id="err"></p><div class="actions"><button class="back" id="back">برگشت</button><button class="next" id="next">بعدی 💌</button></div>`;
+  app.querySelectorAll('[data-place]').forEach(b=>b.onclick=()=>{place=b.dataset.place;render()});
+  document.getElementById('back').onclick=()=>{step=0;render()};
+  document.getElementById('next').onclick=()=>{if(!place){document.getElementById('err').textContent='اول یه جای قشنگ انتخاب کن 💗';return}step=2;render()};
+ }else if(step===2){
+  stamp.textContent='📅';eyebrow.textContent='مرحله دوم از سه';
+  const months=['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
+  app.innerHTML=`<h1>چه تاریخی بریم بیرون؟</h1><p class="sub">ماه و روز قرارمون رو انتخاب کن 🌸</p><label class="field-label" for="month">ماه قرار</label><select id="month">${months.map((m,i)=>`<option value="${i+1}" ${month===(i+1).toString()?'selected':''}>${m}</option>`).join('')}</select><label class="field-label" for="day">روز ماه</label><select id="day">${Array.from({length:31},(_,i)=>`<option value="${i+1}" ${day===(i+1).toString()?'selected':''}>${i+1}</option>`).join('')}</select><p class="note">فقط ماه و روز رو مشخص کن؛ سال لازم نیست 💕</p><div class="actions"><button class="back" id="back">برگشت</button><button class="next" id="next">بعدی 💌</button></div>`;
+  document.getElementById('month').onchange=e=>month=e.target.value;
+  document.getElementById('day').onchange=e=>day=e.target.value;
+  document.getElementById('back').onclick=()=>{step=1;render()};
+  document.getElementById('next').onclick=()=>{month=document.getElementById('month').value;day=document.getElementById('day').value;step=3;render()};
+ }else if(step===3){
+  stamp.textContent='🕰️';eyebrow.textContent='مرحله آخر';
+  app.innerHTML=`<h1>چه ساعتی؟</h1><p class="sub">ساعتش رو هم انتخاب کنیم تا قرارمون کامل بشه ⏰</p><div class="time-row"><div><label class="field-label" for="hour">ساعت</label><select id="hour">${Array.from({length:24},(_,i)=>`<option value="${String(i).padStart(2,'0')}" ${hour===String(i).padStart(2,'0')?'selected':''}>${String(i).padStart(2,'0')}</option>`).join('')}</select></div><div><label class="field-label" for="minute">دقیقه</label><select id="minute">${['00','05','10','15','20','25','30','35','40','45','50','55'].map(m=>`<option value="${m}" ${minute===m?'selected':''}>${m}</option>`).join('')}</select></div></div><div class="actions"><button class="back" id="back">برگشت</button><button class="next" id="finish">تکمیل قرار 💘</button></div>`;
+  document.getElementById('hour').onchange=e=>hour=e.target.value;document.getElementById('minute').onchange=e=>minute=e.target.value;
+  document.getElementById('back').onclick=()=>{step=2;render()};
+  document.getElementById('finish').onclick=()=>{hour=document.getElementById('hour').value;minute=document.getElementById('minute').value;step=4;render()};
+ }else{
+  const months=['فروردین','اردیبهشت','خرداد','تیر','مرداد','شهریور','مهر','آبان','آذر','دی','بهمن','اسفند'];
+  const p=places.find(x=>x.name===place)||places[0];
+  stamp.textContent='🥳';eyebrow.textContent='قرارمون ثبت شد تو قلبمون';
+  progress.classList.add('hidden');
+  app.innerHTML=`<div class="result"><h1>هورااا! 🎉</h1><p class="party">پس ما قراره بریم ${p.emoji}</p><div class="summary">📍 <strong>${place}</strong><br>📅 <strong>${months[Number(month)-1]} ${day}</strong><br>⏰ ساعت <strong>${hour}:${minute}</strong></div><p class="party" style="font-size:17px;margin-top:20px">منتظرم دیر نکنی! 🥹💗</p><p class="sub" style="margin-bottom:18px">یه قرار قشنگ در انتظارمونه…</p><button class="next" id="again">از اول شروع کنیم ♡</button></div>`;
+  document.getElementById('again').onclick=()=>{step=0;place='';day='';month='';hour='18';minute='00';noCount=0;yesScale=1;render()};
+  footer.textContent='این قرار کوچولو، یه خاطره‌ی قشنگ می‌شه ♡';
+ }
+}
+render();
+</script>
+</body>
+</html>
